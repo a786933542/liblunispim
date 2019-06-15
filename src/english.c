@@ -8,7 +8,6 @@
 #include <english.h>
 #include <vc.h>
 #include <share_segment.h>
-#include <unistr.h>
 #include <ctype.h>
 #include <strings.h>
 #include <string.h>

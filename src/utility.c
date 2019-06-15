@@ -13,7 +13,6 @@
 #include <ctype.h>
 #include <stdarg.h>
 #include <unistdio.h>
-#include <unistr.h>
 #include <string.h>
 #include <shared_memory.h>
 #include <debug.h>

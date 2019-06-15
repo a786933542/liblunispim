@@ -18,7 +18,6 @@
 //#include <url.h>
 #include <vc.h>
 #include <editor.h>
-#include <unistr.h>
 #include <stdlib.h>
 #include <string.h>
 #include <utf16char.h>

@@ -36,7 +36,6 @@
 #include <utf16char.h>
 #include <string.h>
 #include <unistd.h>
-#include <unistr.h>
 #include <stdlib.h>
 #include <pthread.h> 
 #include <dirent.h>

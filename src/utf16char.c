@@ -29,7 +29,6 @@
 #include <utf16char.h>
 #include <utility.h>
 #include <stdarg.h>
-#include <unistr.h>
 #include <malloca.h>
 #include <str-kmp.h>
 #include <string.h>

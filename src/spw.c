@@ -60,7 +60,6 @@
 #include <gbk_map.h>
 #include <share_segment.h>
 #include <context.h>
-#include <unistr.h>
 #include <unistdio.h>
 #include <ctype.h>
 #include <utf16char.h>
