@@ -1,8 +1,10 @@
 #include <fstream>
+#ifdef __linux__
 #include <boost/filesystem.hpp>
 #include <boost/interprocess/file_mapping.hpp>
 #include <boost/interprocess/shared_memory_object.hpp>
 #include <boost/interprocess/mapped_region.hpp>
+#endif
 #include <string>
 #include <shared_memory.h>
 #include <map>
@@ -36,6 +38,7 @@ static BOOL resize_file_api(const char* p, boost::uintmax_t size) {
 #endif  // BOOST_RESIZE_FILE
 extern "C" { 
 
+#ifdef __linux__
 class SharedMemoryImpl{
 public:
     enum OpenMode {
@@ -99,6 +102,23 @@ private:
 
 
 };
+#elif __ANDROID__
+class SharedMemoryImpl{
+public:
+    enum OpenMode {
+        kOpenReadOnly,
+        kOpenReadWrite,
+    };
+
+    SharedMemoryImpl(const char* shared_name, int shared_type, OpenMode mode, int size) {}
+    ~SharedMemoryImpl() {}
+    bool Flush() { return false; }
+    bool remove() { return false; }
+    void* get_address() const { return NULL; }
+    size_t get_size() const { return 0; }
+    int get_shared_type() { return 0; }
+};
+#endif
 using shared_map = std::map<const std::string, SharedMemoryImpl>;
 static std::map<const std::string, SharedMemoryImpl>* _shared_map;
 void CreateSharedMap()
