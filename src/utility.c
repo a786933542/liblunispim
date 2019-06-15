@@ -12,7 +12,6 @@
 #include <map_file.h>
 #include <ctype.h>
 #include <stdarg.h>
-#include <unistdio.h>
 #include <string.h>
 #include <shared_memory.h>
 #include <debug.h>
