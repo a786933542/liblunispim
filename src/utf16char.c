@@ -26,6 +26,7 @@
 
 #define CANON_ELEMENT(c) c
 #include <stdlib.h>
+#include <stdbool.h>
 #include <utf16char.h>
 #include <utility.h>
 #include <stdarg.h>
